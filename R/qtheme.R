@@ -13,7 +13,7 @@
 #'   ggscatter(x = "x", y = "y", color = "x") +
 #'   theme_q()
 theme_q <- function(..., bg = "white") {
-  ggthemes::theme_par(base_size = 8) +
+  ggthemes::theme_par(...) +
     ggplot2::theme(
       rect = ggplot2::element_rect(fill = bg),
       plot.margin = ggplot2::unit(rep(0.5, 4), "lines"),
@@ -43,7 +43,7 @@ theme_q <- function(..., bg = "white") {
 #'   ggscatter(x = "x", y = "y", color = "x") +
 #'   theme_t()
 theme_t <- function(..., bg = "white") {
-  ggpubr::theme_pubr(base_size = 8) +
+  ggpubr::theme_pubr(...) +
     ggplot2::theme(
       rect = ggplot2::element_rect(fill = bg),
       panel.background = ggplot2::element_blank(),
@@ -55,4 +55,35 @@ theme_t <- function(..., bg = "white") {
       axis.ticks = ggplot2::element_line(color = "black", linewidth = ggplot2::unit(0.2325, "pt")),
       legend.title = ggplot2::element_blank()
     )
+}
+
+#' A funtion to save ggplot project in fixed style
+#' @author qinti
+#' @param name
+#' filename of pdf or png
+#' @param w
+#' the width of plot
+#' @param h
+#' the height of plot
+#' @return No return value. This function is called for its side effects.
+#' @export
+#'
+#' @examples
+#' library(ggplot2)
+#' data <- data.frame(x = 1:10, y = 2:11)
+#' ggplot(data, mapping = aes(x = x, y = y)) +
+#'   geom_point()
+#' tmpfile <- tempfile(fileext = ".pdf")
+#' ttsave(tmpfile, 5.5, 5.5)
+ttsave <- function(name, w, h) {
+  if (!is.character(name) || length(name) != 1) {
+    stop("The 'name' parameter must be a single character string.")
+  }
+  if (!is.numeric(w) || length(w) != 1) {
+    stop("The 'w' parameter must be a single numeric value.")
+  }
+  if (!is.numeric(h) || length(h) != 1) {
+    stop("The 'h' parameter must be a single numeric value.")
+  }
+  ggplot2::ggsave(filename = name, width = w, height = h, dpi = 600, units = "cm")
 }

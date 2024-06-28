@@ -1,0 +1,6 @@
+devtools::install_github("qinti2023/qtheme")
+
+data.frame(x = 1:10, y = 2:11) %>%
+  ggscatter(x = "x", y = "y", color = "x") +
+  theme_q()+labs(x="zero",y="random")+
+  theme(legend.position = "none")

@@ -19,8 +19,8 @@ A simple-looking ggplot2 theme for publication: some adjustments from the theme_
 }
 \examples{
 library(ggpubr)
-data.frame(x=1:10,y=2:11)\%>\%
-  ggscatter(x="x",y="y",color = "x")+
+data.frame(x = 1:10, y = 2:11) \%>\%
+  ggscatter(x = "x", y = "y", color = "x") +
   theme_t()
 }
 \author{
