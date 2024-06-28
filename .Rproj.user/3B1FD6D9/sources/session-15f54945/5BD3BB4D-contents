@@ -21,7 +21,7 @@ theme_q <- function(..., bg = "white") {
       panel.border = ggplot2::element_rect(fill = "transparent", color = "black", linewidth = ggplot2::unit(0.2325, "pt")), # 边框线宽度为 0.5 pt
       panel.grid = ggplot2::element_blank(),
       axis.title = ggplot2::element_text(color = "black", vjust = 0.1),
-      axis.ticks.length = ggplot2::unit(0.15, "lines"),
+      axis.ticks.length = ggplot2::unit(0.18, "lines"),
       axis.ticks = ggplot2::element_line(color = "black", linewidth = ggplot2::unit(0.2325, "pt")),
       legend.title = ggplot2::element_blank(),
       legend.key = ggplot2::element_rect(fill = "transparent", color = "transparent")
@@ -51,7 +51,7 @@ theme_t <- function(..., bg = "white") {
       panel.grid = ggplot2::element_blank(),
       axis.line = ggplot2::element_line(color = "black", linewidth = ggplot2::unit(0.2325, "pt")),
       axis.title = ggplot2::element_text(color = "black", vjust = 0.1),
-      axis.ticks.length = ggplot2::unit(0.15, "lines"),
+      axis.ticks.length = ggplot2::unit(0.18, "lines"),
       axis.ticks = ggplot2::element_line(color = "black", linewidth = ggplot2::unit(0.2325, "pt")),
       legend.title = ggplot2::element_blank()
     )

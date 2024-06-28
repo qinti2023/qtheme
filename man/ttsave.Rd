@@ -21,8 +21,9 @@ A funtion to save ggplot project in fixed style
 }
 \examples{
 library(ggplot2)
-data = data.frame(x=1:10,y=2:11)
-ggplot(data,mapping = aes(x=x,y=y))+geom_point()
+data <- data.frame(x = 1:10, y = 2:11)
+ggplot(data, mapping = aes(x = x, y = y)) +
+  geom_point()
 tmpfile <- tempfile(fileext = ".pdf")
 ttsave(tmpfile, 5.5, 5.5)
 }
